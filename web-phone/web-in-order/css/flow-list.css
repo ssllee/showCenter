@@ -1,0 +1,44 @@
+@charset "utf-8";
+.inflowheader{
+	margin:3rem 1.3rem 1.1rem;
+	
+}
+.content{
+	  height:19.1rem;
+	  width:33.5rem;
+	  float:left;
+      list-style:none;
+	  border-radius: 0.7rem; 
+	  background-color: #ffffff;
+	  background-image: url("../../images/order/phone-line.png");
+	  background-repeat: no-repeat;
+	  background-position: center bottom; 
+	  padding-top:0.7rem;
+	  padding-bottom:1.7rem;
+	  margin-bottom: 0.9rem;
+	  margin-left: 1.2rem;
+	  margin-right: 1.2rem;
+}
+.content li{
+	float:left;
+	height:2.08rem; 
+	width:100%;
+	margin:0;
+	padding:0;
+	}
+.div1{
+	float:left;
+	width:15rem;
+	font-size:1.3rem;
+	color:#444444;
+	margin:0;
+	padding:0;
+}
+.div2{
+	float:left;
+	width:18rem;
+	font-size:1.3rem;
+	color:#444444;
+	margin:0;
+	padding:0;
+}

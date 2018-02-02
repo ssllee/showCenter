@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="pragma" content="no-cache">
+ 	<meta http-equiv="cache-control" content="no-cache">
+ 	<meta http-equiv="expires" content="0">   
+    
+  </head>
+  
+  <body>
+  
+  	<div class="container">
+  		<a href="javascript:;" onclick="test()">流程查询</a>
+  		<a href="javascript:;" onclick="test2()">订单评价</a>
+  		
+  		<a href="http://localhost:8081/QueryCenterWeb/web-phone/web-out-order/page/order-search-inmess.html?idNum=142431198701300045&serialNumber=18510729630&exCode=tmall&userName=18510729630&callCode=131172ad8ea3875a00eac487df6f3d05">验证码</a>
+	</div>
+  	<div id="ddd"></div>
+  	
+
+   	<!--bootstrap-->
+	<script type="text/javascript" src="js/plugins/bootstrap/jquery-1.9.1.min.js" ></script>
+	<!--公共部分-->
+	<script type="text/javascript" src="js/common/common.js"></script>
+	<script type="text/javascript" src="js/common/util.js"></script>
+	
+	
+	<script>
+  		$(function(){
+  			aa();
+  		});
+  		function aa(){
+  	  		$("#ddd").html(Math.random(10));
+  		}
+  		function test(){
+  			window.location.href = getRootPath_web()+"/web-phone/web-out-order/page/flow-list.html?orderNum=Y8948348724873873839&userName=18510729630&exCode=tmall&callCode=131172ad8ea3875a00eac487df6f3d05";
+  		}
+  		function test2(){
+  			window.location.href = getRootPath_web()+"/web-phone/web-out-order/page/order-assess.html?orderNum=Y8948348724873873839&userName=18510729630&exCode=tmall&callCode=131172ad8ea3875a00eac487df6f3d05";
+  		}
+  	</script>
+  </body>
+</html>

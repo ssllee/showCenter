@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/*********对外 流转轨迹*********/
+
+.flowtop {
+    position: relative;
+    height: 12rem;/* 240px */
+    width: 100%;
+    background: url(../../images/order/tt1.png) top no-repeat;
+    background-size: 100% auto;
+}
+
+.flowtop p {
+	font-size: 1.5rem;/* 30px; */
+	color:#fff;
+	position: absolute;
+	top: 3rem; /* 60px; */
+	left: 28%;/* 160px; */
+}
+.showNumber {
+	font-size: 1.5rem;/* 30px; */
+	color:#fff;
+	position: absolute;
+	top: 5.5rem; /* 110px; */
+	left: 28%;/* 160px; */
+}

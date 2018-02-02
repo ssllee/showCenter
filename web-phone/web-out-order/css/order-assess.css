@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+/* 五星评价 start */
+
+.bb2 {
+	border-bottom: 2px solid #f6f6f6;
+}
+.mgt16 {
+	margin-top: 0.8rem; /* 16px; */
+}
+.a-row {
+	font-size: 1.5rem; /* 30px; */
+	color: #323232;
+	height: 5.7rem; /* 114px; */
+	line-height: 5.7rem;/* 114px; */
+	background-color:  #fff;
+}
+.row-left {
+	float: left;
+	/* width:36%; */
+	margin-left: 1.8rem; /* 36px; */
+}
+.row-right{
+	float: right;
+	margin-right: 1.8rem; /* 36px; */
+	color: #a0a0a0;
+}
+.row-right .ratyWidth {
+	width: 11.5rem; /* 230px; */
+}
+.row-right .fontWidth {
+	width: 4.7rem; /* 94px; */
+}
+.row-right img{ 
+	height: 1.7rem; /* 34px; */
+	width: 1.7rem; /* 34px; */
+	margin-top: -0.3rem; /* -6px; */
+}
+/* 五星评价 end */
+
+.a-textarea {
+	height: 17.5rem; /* 350px; */
+    width: 100%;
+    line-height: 120%;
+    font-size: 1.5rem; /* 30px; */
+    color: #323232;
+    padding: 1.8rem; /* 36px; */
+    margin: 0.8rem 0 2rem 0; /* 16px 0 40px 0; */
+    border: 0px solid #fff;
+}
+
+
+

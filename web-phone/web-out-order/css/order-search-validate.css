@@ -1,0 +1,22 @@
+@charset "utf-8";
+/********对外 手机 订单查询+获取验证码*******/
+
+/* 超链接区 start  */
+
+.a-div {
+	margin: 4.5rem 4.2rem 1.5rem 4.2rem; /* 90px 84px 30px 84px; */
+}
+.a-div .change {
+	font-size: 1.3rem; /* 26px; */
+	color: #d15901;	
+}
+.a-div .change:hover {
+	font-size: 1.3rem; /* 26px; */
+	color: #bb5000;	
+}
+
+/* 超链接区 end  */
+
+
+
+

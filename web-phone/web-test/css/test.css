@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+
+/* 五星评价 start */
+.demo{
+	overflow: hidden;
+	font-size: 1rem;/* 20px; */
+	width: 100%; /* 250px;  */
+	margin: 5rem; /* 100px auto; */
+}
+	
+.demo img{ 
+	height: 1.2rem; /* 24px; */
+	width:1.2rem; /* 24px; */
+	margin:0 4px;
+}
+/* 五星评价 end */
+
+/*列表区域 start*/
+.listArea {
+	overflow: hidden;
+	margin-top: 0.9rem;/*18px;*/
+}
+.listArea ul {
+	margin: 0 1.1rem 0.9rem 1.1rem; /*0 22px 18px 22px;*/
+	padding-left: 1.2rem;/*24px;*/
+	background-color: #fff;
+	border-radius: 1.1rem;/*22px;*/
+	list-style: none;
+	border: 0.25rem solid #fff;/*5px solid #fff;*/ 
+	border-image-source:url(../../images/order/phone-line.png);
+	border-image-width: 0 0 1.05rem 100%;/*0 0 21px 100%  top right bottom left*/
+}
+/*列表区域 end*/

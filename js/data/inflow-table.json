@@ -1,0 +1,55 @@
+{
+  "total": 101,
+  "rows": [
+    {
+      "CREATEDATE": "2018年1月26日 14:23:12",
+      "SYSCODE": "订单中心",
+      "JOBNAME": "竣工审核",
+      "STAFFNAME": "林宽",
+      "STAFFTEL":18600000000,
+      "ENDDATE":"2018年1月26日 14:25:12",
+      "JOBSTATE":"已成功",
+      "FAILRESULT":" "
+    },
+    {
+      "CREATEDATE": "2018年1月25日 14:23:12",
+      "SYSCODE": "掌上运维",
+      "JOBNAME": "外线施工",
+      "STAFFNAME": "葛文",
+      "STAFFTEL":18600000002,
+      "ENDDATE":"2018年1月25日 14:25:12",
+      "JOBSTATE":"已成功",
+      "FAILRESULT":"  "
+    },
+    {
+      "CREATEDATE": "2018年1月24日 14:23:12",
+      "SYSCODE": "IOM",
+      "JOBNAME": "工单分配",
+      "STAFFNAME": "孙畅",
+      "STAFFTEL":18600000004,
+      "ENDDATE":"2018年1月24日 14:25:12",
+      "JOBSTATE":"已成功",
+      "FAILRESULT":" " 
+    },
+    {
+      "CREATEDATE": "2018年1月23日 14:23:12",
+      "SYSCODE": "受理",
+      "JOBNAME": "业务受理",
+      "STAFFNAME": "王林",
+      "STAFFTEL":18600000006,
+      "ENDDATE":"2018年1月23日 14:25:12",
+      "JOBSTATE":"已成功",
+      "FAILRESULT":"  "
+    },
+    {
+      "CREATEDATE": "2018年1月22日 14:23:12",
+      "SYSCODE": "订单中心",
+      "JOBNAME": "订单受理",
+      "STAFFNAME": "李兴明",
+      "STAFFTEL":18600000008,
+      "ENDDATE":"2018年1月22日 14:25:12",
+      "JOBSTATE":"已成功",
+      "FAILRESULT":"  "
+    }
+  ]
+}
