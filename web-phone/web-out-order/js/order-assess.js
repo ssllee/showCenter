@@ -24,7 +24,7 @@ var orderAssessObj = {
 		
 		var params = $("#submitForm").serialize();
 		$.ajax({
-		       type : 'POST',//测试  GET  生产POST
+		       type : 'GET',//测试  GET  生产POST
 		       async : true,
 		       url: orderAssessObj.url,
 		       data: params,
