@@ -48,7 +48,8 @@ function getOrderData(serialNumber){
 	       success : function(resData) {
 	    	   if (resData.state==1){
 	    	   //本地存储 赋值
-	    	   setOrderList(resData.data);//orderListData=resData.data; 
+	    	   //setOrderList(resData.rows);//orderListData=resData.data; 
+	    	   setOrderQueryStr("&serialNumber="+serialNumber);  
 	    	   //跳转到订单列表页面  order-list
 	    	   window.location.href=getOutUrl(getRootPath_web(),"/web-phone/web-out-order/page/order-list.html");
 	    	   }
@@ -99,8 +100,8 @@ $("#sendMessage").click(function(){
 	  if(form1.IDNum.value!==""&&form1.phoneNum.value!==""){
 		  	var idNum = $("#IDNum").val();
 		  	var phoneNum = $("#phoneNum").val();
-			var boo1= !(/^1[34578]\d{9}$/.test(phoneNum));
-			var boo2=!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(idNum))
+			var boo1=(/^1[34578]\d{9}$/.test(phoneNum));
+			var boo2=(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(idNum))
 			if(!(/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/.test(idNum))){ 
 				layer.open({
 					  content: '您的身份证号有误，请重填'

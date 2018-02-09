@@ -1,5 +1,5 @@
 
-/**********************/
+/************对外-手机-订单评价**********/
 
 $(document).ready(function(){
 
@@ -24,7 +24,7 @@ var orderAssessObj = {
 		
 		var params = $("#submitForm").serialize();
 		$.ajax({
-		       type : 'POST',//测试  GET  生产POST
+		       type : 'GET',//测试  GET  生产POST
 		       async : true,
 		       url: orderAssessObj.url,
 		       data: params,
@@ -63,21 +63,21 @@ var orderAssessObj = {
 		var v1 = $('input[name="serviceLevel"]').val();
 		var v2 = $('input[name="constructLevel"]').val();
 		var v3 = $('input[name="fashionLevel"]').val();
-		var v4 = $('input[name="aaabbbLevel"]').val();
-		var v5 = $('input[name="cccdddLevel"]').val();
+		var v4 = $('input[name="extLevel1"]').val();
+		var v5 = $('input[name="extLevel2"]').val();
 		var comment = $('#comment').val();
 		
 		if (v1 == "" || v2 == "" || v3 == "" || v4 == "" || v5 == "") {
 			layer.open({
 			  content: '请选择评价内容'
-			  ,style: 'background-color:#f7f7f8; width:50%;color:#323232; border:none;' //自定风格
+			  ,style: 'background-color:#f7f7f8; width:80%;color:#323232; border:none;' //自定风格
 			  ,time: 3
 			});
 			return false;
 		} else if (comment == "") {
 			layer.open({
 			  content: '请填写评价内容'
-			  ,style: 'background-color:#f7f7f8; width:50%;color:#323232; border:none;' //自定风格
+			  ,style: 'background-color:#f7f7f8; width:80%;color:#323232; border:none;' //自定风格
 			  ,time: 3
 			});
 			return false;
@@ -143,9 +143,9 @@ var orderAssessObj = {
 	        }
 	    });
 	}
-	//五星评价 - -aaabbb
+	//五星评价 -  extLevel1
 	,initaaabbbRaty: function() {
-		$('#demo-aaabbb').raty({
+		$('#demo-extLevel1').raty({
 			score: 5,//默认选中第5个
 	        number: 5, //多少个星星设置
 	        targetType: 'hint', //类型选择，number是数字值，hint，是设置的数组值
@@ -153,8 +153,8 @@ var orderAssessObj = {
 	        hints: ['非常差','差', '一般', '好', '非常好'],
 	        starOff: 'a-off.png',
 	        starOn: 'a-on.png',
-	        target: '#hint-aaabbb',// 目标div
-	        scoreName: "aaabbbLevel",// 提交表单name
+	        target: '#hint-extLevel1',// 目标div
+	        scoreName: "extLevel1",// 提交表单name
 	        cancel: false,
 	        targetKeep: true,
 	        targetText: '请评分',//无评价提示
@@ -162,9 +162,9 @@ var orderAssessObj = {
 	        }
 	    });
 	}
-	//五星评价 - -cccddd
+	//五星评价 - -extLevel2
 	,initcccdddRaty: function() {
-		$('#demo-cccddd').raty({
+		$('#demo-extLevel2').raty({
 			score: 5,//默认选中第5个
 	        number: 5, //多少个星星设置
 	        targetType: 'hint', //类型选择，number是数字值，hint，是设置的数组值
@@ -172,8 +172,8 @@ var orderAssessObj = {
 	        hints: ['非常差','差', '一般', '好', '非常好'],
 	        starOff: 'a-off.png',
 	        starOn: 'a-on.png',
-	        target: '#hint-cccddd',// 目标div
-	        scoreName: "cccdddLevel",// 提交表单name
+	        target: '#hint-extLevel2',// 目标div
+	        scoreName: "extLevel2",// 提交表单name
 	        cancel: false,
 	        targetKeep: true,
 	        targetText: '请评分',//无评价提示

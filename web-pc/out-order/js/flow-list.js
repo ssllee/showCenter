@@ -1,5 +1,5 @@
 
-/*************对内 流程查询*********/
+/*************对外-PC-流程查询*********/
 
 $(document).ready(function(){
 	flowListObj.showNum();
@@ -29,7 +29,14 @@ var flowListObj = {
 			   },
 		       success : function(resData) { 
 		          if(resData == null) return;
-		          flowListObj.makeFlowArea(resData);
+		          var state = resData.state;//1:有流程    0：没有    -1：系统报错
+		          if(state == 1) {
+		        	  flowListObj.makeFlowArea(resData);
+		          } else if (state == 0){
+		        	  layer.msg('该订单没有流程轨迹！', {
+		        			time: 2000 //2s后自动关闭
+		        	  });
+		          }
 		       }     
 	     });
 	}

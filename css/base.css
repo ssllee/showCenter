@@ -51,10 +51,12 @@ i,em{ font-style:normal;}
 .mgr10{margin-right:10px;}
 .mgtrbl10{margin:10px;}
 
+.inpupt-placeholder{ color: #bbb; }
+
 .btn-orange {
 	color: #FFFFFF;
-	background-color: #fd6b00;
-	padding: 5px 10px;
+    background-color: #fd6b00;
+    padding: 6px 30px;
 }
 
 /*关闭按钮*/
@@ -96,7 +98,7 @@ i,em{ font-style:normal;}
 .a-input {
 	height: 40px;
 	font-size: 16px;
-	color: #666;
+	/* color: #666; input设置了inpupt-placeholder样式颜色 */
 }
 .a-input-group button {
 	width: 40px;
@@ -125,7 +127,7 @@ i,em{ font-style:normal;}
 
 /** 查询-条件组合 end ****/
 
-/** 查询-表格  start ****/
+/** 查询-表格- a对外使用 b对内使用  start ****/
 .form-body {
 	margin:10px 0;
 }
@@ -135,9 +137,11 @@ i,em{ font-style:normal;}
 	min-height:300px;
 }
 .a-tableDiv {
-	display:none;
+	/* display:none; */
     margin-top: 20px;
     margin-bottom: 50px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .a-tableDiv table>thead>tr>th {
@@ -182,10 +186,26 @@ i,em{ font-style:normal;}
 .showAssess {
 	color: #2c5dfe;
 }
-/** 查询-表格 end ****/
 
 
-/** 弹出层   start**/
+.b-tableDiv table>thead>tr>th {
+	background-color:#eee;
+	color: #444;
+	font-size: 16px;
+	font-weight: normal;
+}
+
+/*table横向滚动条*/
+.fixed-table-body table.minWidth {
+	min-width:1500px;
+}
+
+/** 查询-表格- a对外使用 b对内使用d ****/
+
+
+
+
+/** 弹出层   layer start**/
 
 body .a-layer {
 	background: transparent;
@@ -200,8 +220,76 @@ body .a-layer .layui-layer-title{
 }
 
 
+/** 弹出层   layer end**/
 
 
 
-/** 弹出层   end**/
+/** 模态框 start**/
+
+.bg-model-wrap {
+	display:none;
+}
+/* 遮盖层 初始样式不能有display:none;否则透明化不管用*/
+.bg-model-cover {
+	position:absolute;
+	top:0%;
+	left:0%;
+	width:100%;
+	height:100%;
+	position:fixed;
+	z-index:999;
+	/*filter:Alpha(Opacity=30);
+	background:#000; 这种用法，内容会被透明化*/
+	
+	filter:progid:DXImageTransform.Microsoft.gradient(enabled='ture',GradientType='1',StartColorStr=#30000000,EndColorstr=#30000000); 
+	background-color:rgba(0,0,0,0.3);
+}
+
+.bg-model-wrap .content {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	border:1px solid #c9c9c9;
+	background-color:#fafafa;
+	width: 530px;
+	height: 300px;
+	margin-left: -265px;
+	margin-top: -150px;
+	background-color: #fff;
+	z-index:9999;
+}
+
+.bg-model-close {
+	position: absolute;
+	right:10px;
+	top:10px;
+	text-decoration: none;
+    background-image: url('../images/order/close.png');background-position: 0px 0px;width:18px;height:18px;
+    display: block;
+}
+.bg-model-close:hover {
+	background-image: url('../images/order/close.png');background-position: 0px -23px;width:18px;height:18px;
+}
+
+
+/** 模态框 end**/
+
+/* tab切换 start */
+.nav-tabs>li>a,
+.nav-tabs>li>a:hover {
+	font-size: 16px;
+	color: #dc3f02;
+}
+
+.nav-tabs>li.active>a, 
+.nav-tabs>li.active>a:focus, 
+.nav-tabs>li.active>a:hover {
+    color: #fd4a05;
+    cursor: default;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+/* tab切换 end */
+
 

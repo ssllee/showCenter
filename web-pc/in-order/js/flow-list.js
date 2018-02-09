@@ -1,22 +1,33 @@
 	
-/**************************/
+/************对内-PC-流程查询**************/
+$(document).ready(function() {
+	//初始加载该页面获取orderNum直接查询
+	testTbObj.initTable();
+});	
+
+(function(){
 	
-/******PC端对内流转轨迹******/
+	//input 提示语placeholder ie兼容初始化
+	placeholder("#jobName");
+	
+  })();
 //本页面对象
 var testTbObj = {
 	//变量
-	urlSearch: getRootPath_web()+"/js/data/inflow-table.json"
+		
+	//urlSearch: getOutUrl(getRootPath_web(),"/process/queryProcess?flag=int&orderNum="+orderNum+"&sysCode="+sysCode+"&jobName="+jobName)
+	//urlSearch:getRootPath_web()+"/process/queryProcess"//"/js/data/inflow-table.json"
 	//初始数据
-	,initTable: function(){
-		//var orderNum = $("#orderNum").val();
-		var createDate = $("#createDate").val();
-		var sysCode = $("#sysCode").val();
-		var jobName = $("#jobName").val();
+	initTable: function(){
+		var orderNum = getUrlParam("orderNum");
+		var sysCode = $('#sysCode').val();
+		var jobName = $('#jobName').val();
 		$('#table').bootstrapTable("destroy");
 	    $('#table').bootstrapTable({
 	       // url: "http://localhost:8080/testSpringMvc/test/list.do",
-	    	url: testTbObj.urlSearch,
-	        method:"get",
+	    	url: getRootPath_web() + "/process/queryProcess?flag=int&orderNum="+orderNum+"&sysCode="+sysCode+"&jobName="+jobName,
+		    dataType : 'json',
+	        method:"post",
 	        contentType:"application/x-www-form-urlencoded",
 	        queryParams:"queryParams",
 	        pagination:false,
@@ -29,15 +40,13 @@ var testTbObj = {
 	        showColumns:false,
 	        search:false,
 	        searchAlign:"left",
-	        sortName:createDate,
-	        sortOrder:"desc",
 	    });
 	}
 }
 
 
 //【查询】按钮
-$(".submitBtn").click(function(){
+$(".submitBtn").click(function(){	
 	testTbObj.initTable();
 });
 //【重置】按钮

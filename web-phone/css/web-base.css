@@ -92,7 +92,7 @@ header .cr {
 /* 右边按钮*/
 header .crr {
 	width: 5.8rem;
-    font-size: 2rem;
+    font-size: 1.8rem;
     padding-right: 1.8rem;
 }
  
@@ -125,18 +125,22 @@ header .cl:hover {
 .a-input-group .group-text {
 	height: 5rem; /* 100px; */
 	width: 100%;
-	font-size: 1.5rem; /* 30px; */
-	color: #9d9d9d;
+	/* font-size: 1.5rem;
+	color: #9d9d9d; */
 	border: 0px solid #fff;
 }
 
-.a-input-group .group-text input {
+.a-input-group .group-text input[type='text'] {
 	height:100%;
 	width: 100%;
 	padding-left: 5.6rem; /* 112px; */
 	padding-right: 0.5rem; /* 10px; */
 	background-color: #fff;
 	border-radius: 0.7rem; /* 14px; */
+	border: none;
+	font-size: 1.5rem;
+    color: #9d9d9d;
+    
 }
 
 .a-input-group .bg1 {
@@ -169,6 +173,45 @@ header .cl:hover {
     border-radius: 0.7rem; /* 14px; */
 }
 
+.btn_submit {
+	width: 48%;
+    height: 100%;
+    font-size: 1.5rem; /* 30px; */
+    color: #fff;
+    background-color: #fd6b00;
+    border-radius: 0.7rem; /* 14px; */
+	/*! display: block; */
+	float: left;
+}
 
+.btn_reset {
+	width: 48%;
+    height: 100%;
+    font-size: 1.5rem; /* 30px; */
+    color: #fff;
+    background-color: #fd6b00;
+    border-radius: 0.7rem; /* 14px; */
+	/*! display: block; */
+	float: right;
+}
 
 /* 按钮区 a类 end */
+
+
+/* 下拉框 start */
+.a-select {
+	height: 100%;
+	width: 100%;
+	padding-left: 5.6rem;
+	background-color: #ffffff!important;
+	/* inline-size: 29rem; */
+	border-radius: 0.7rem;
+	padding-left: 5.6rem;
+	border: none;
+	font-size: 1.5rem;
+    color: #9d9d9d;
+}
+
+/* 下拉框  end */
+
+

@@ -3,25 +3,54 @@
 		
 
 $(document).ready(function(){	
-	getListDate();
+	loadListDate();
 });
 
+function loadListDate() {
+	//var orderListUrl = getOutUrl(getRootPath_web(),"/trade/queryOrder?flag=out"+getOrderQueryStr());
+	var orderListUrl = getOutUrl(getRootPath_web(),"/js/data/order-list.json?flag=out"+getOrderQueryStr());
+	$.ajax({
+	       type : 'GET',//测试  GET  生产POST
+	       async : true,
+	       url: orderListUrl,
+	       dataType : 'json',
+	       beforeSend: function () {         
+				showLoader();
+		   },
+		   complete:function(){       
+			    hideLoader();
+		   },
+	       success : function(resData) { 
+	          if(resData == null) return;
+	          var state = resData.state;//1:有流程    0：没有    -1：系统报错
+	          if(state == 1) {
+	        	  getListDate(resData.rows);
+	          } else {
+	        	  layer.open({
+	    			  content: '没有查到数据！'
+	    			  ,style: 'background-color:#f7f7f8; width:80%;color:#323232; border:none;' //自定风格
+	    			  ,time: 3
+				  });
+	          }
+	          
+	       }     
+  });
+}
 
 //下拉到底，加载数据
-function getListDate() {
-		  var data = getOrderList();// 本地存储order-search-validate.js   
+function getListDate(data) {
 		  
 		  $.each(data, function(index,item) {  
 				  //订单状态statusFlag : N：未启动，R：运行中，F：撤单，S：成功
 				  //评价状态commentSate：   1-已评价 0-未评价
 			  
-			      var orderNum = item.orderNum;
-			      var statusFlag = item.statusFlag;
-			      var commentState = item.commentState;
-			      var productName = item.productName;
+			      var orderNum = checkNullOrEmptyStr(item.orderNum) ? "" :  item.orderNum;
+			      var statusFlag =  checkNullOrEmptyStr(item.statusFlag) ? "" :  item.statusFlag;
+			      var commentState = checkNullOrEmptyStr(item.commentState) ? "" :  item.commentState;
+			      var productName = checkNullOrEmptyStr(item.productName) ? "" :  item.productName;
 			      var customerName = checkNullOrEmptyStr(item.customerName) ? "" :  item.customerName;
 			      var addrName = checkNullOrEmptyStr(item.addrName) ? "" :  item.addrName;
-			      var ocAcceptDate = item.ocAcceptDate;
+			      var ocAcceptDate = checkNullOrEmptyStr(item.ocAcceptDate) ? "" :  item.ocAcceptDate;
 			      var productId = checkNullOrEmptyStr(item.productId) ? "" :  item.productId;
 			      
 			      var href1=getOutUrl(getRootPath_web(),"/web-phone/web-out-order/page/flow-list.html?orderNum="+orderNum);

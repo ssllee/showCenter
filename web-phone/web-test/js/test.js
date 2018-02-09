@@ -110,11 +110,22 @@ $("#loaderBtn").click(function(){
 		   complete:function(){       
 			    hideLoader();
 		   },
+		   /* 或者直接使用layer自带的加载
+		   beforeSend: function () {         
+			   //手机：layer.open({type: 2});//pc:layer.load(2);
+		   },
+		   complete:function(){       
+			   layer.closeAll('loading');
+		   },*/
 	       success : function(resData) { 
 	          if(resData == null) return;
 	          var data = resData.rows;
 	     	  alert(data);
 	       }     
   });
+	
+	
+	   
+	   
 });
 

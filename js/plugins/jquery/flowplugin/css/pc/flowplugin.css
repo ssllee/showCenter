@@ -17,7 +17,7 @@
 /* flow start */
 .flowSwrap {
 	position: relative;
-	margin: 0 auto;
+	margin: 0 10px 0 0;
 	/* width:720px; */
 	/*background-color: rgba(0,0,0,.3);*/
 }

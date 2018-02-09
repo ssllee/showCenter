@@ -19,6 +19,8 @@
 	<!--自己-->
 	<link rel="stylesheet" type="text/css" href="./css/test.css">
 	
+	<!--【手机端专享】自适应必须放head里-->
+	<script type="text/javascript" src="../js/web-util.js"></script>
   </head>
   
   <body>
@@ -116,20 +118,97 @@
 	<hr style="border: solid 2px gold;"/>
 	<!--日期 end -->
 	
-	<!--列表区域 start -->
-	<div class="listArea">
-		<ul>
-			<li>1</li>
-			<li>2</li>
-			<li>3</li>
-		</ul>
-		<ul>
-			<li>11</li>
-			<li>22</li>
-			<li>33</li>
+	
+	<!--查询  start-->
+	<div>
+
+		<div class="a-input-group">
+		  <div class="group-text">
+		  	<input name="" id="" type="text" placeholder="请输入身份证号" class="form-control bg1">
+		  </div>
+		</div>
+		<div class="a-input-group">
+		  <div class="group-text">
+		  	<input name="" id="" type="text" placeholder="请输入联系电话" class="form-control bg2">
+		  </div>
+		</div>
+		<div class="a-input-group">
+	        <div class="group-text">
+	          <select class="form-control a-select bg2" id="" name="">
+		            <option value="">请选择订单类型</option>
+		            <option value="1">渠道</option>
+		            <option value="2">营业</option>
+	          </select>
+	        </div>
+		</div>
+
+		<div class="a-btn-group">
+			<button type="button" class="btn btn_search">获取短信验证码</button>
+		</div>
+		<div class="a-btn-group">
+			<button type="button" class="btn btn_submit">提交</button>
+			<button type="button" class="btn btn_reset">重置</button>
+		</div>		
+
+	</div>
+	<!--查询  end-->
+	
+	
+	 <!--列表区域 start -->
+	 <div class="listArea" id="listid">	
+ 		<ul>
+	 		<li class="hh1 line">
+				<a href="">订单编号：001</a>
+			</li>
+			<li class="hh2">
+				产品名称：冰激凌家庭套餐A中国联通全球VIP至尊用户
+			</li>
+			<li class="hh3 line">
+				客户名称：中国联通全球VIP至尊用户中国联通全球VIP至尊用户
+			</li>
+			<li class="hh4">
+				<div class="fl color-orange">运行中</div>
+			</li>
+			<li class="hh4">
+				<div class="fl color-green">已完成</div>
+				<div class="fr ra">评价成功</div>
+			</li>
+			<li class="hh4">
+				<div class="fl color-green">已完成</div>
+				<div class="fr rb"><a href="">立即评价</a></div>
+			</li>
+			<li class="hh5">
+				装机地址：北京市海淀区西北旺东路中关村软件园西二旗软件园一期某某大厦A座101室
+			</li>
+			<li class="hh6">
+				<div class="fr">2018-02-01 11:30</div>
+			</li>
 		</ul>
 	</div>
 	<!--列表区域 end -->
+	
+	<!--列表区域2  每行都是左右样式相同 start -->
+	 <div class="listArea">	
+ 		<ul>
+			<li class="hh0 line">
+				<div class="divLeft">开户名称：</div>
+				<div class="divRight">中国联通灯市口</div>
+			</li>
+			<li class="hh0 line">
+				<div class="divLeft">开户地址：</div>
+				<div class="divRight">北京市海淀区西北旺东路中关村软件园西二旗软件园一期某某大厦A座101室</div>
+			</li>
+			<li class="hh0 line">
+				<div class="divLeft">人工号：</div>
+				<div class="divRight">20177777777777777777777777777777777777778-01-27 04:00</div>
+			</li>
+			<li class="hh0">
+				<div class="divLeft">处理人电话：</div>
+				<div class="divRight">18511112222</div>
+			</li>
+		</ul>
+	</div>
+	<!--列表区域2  每行都是左右样式相同 end -->
 	<hr style="border: solid 2px gold;"/>
 	
 	
@@ -183,9 +262,6 @@
 	<script type="text/javascript" src="../../js/common/common.js"></script>
 	<script type="text/javascript" src="../../js/common/util.js"></script>
 		
-	<!--【手机端专享】-->
-	<script type="text/javascript" src="../js/web-util.js"></script>
-	
 	<!-- 手机核心插件 end -->
 	
 	<!--自己-->
