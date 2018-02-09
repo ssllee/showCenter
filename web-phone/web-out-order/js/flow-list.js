@@ -1,5 +1,5 @@
 
-/*************对外 流程查询*********/
+/*************对外-手机-流程查询*********/
 
 $(document).ready(function(){
 	flowListObj.showNum();
@@ -29,7 +29,17 @@ var flowListObj = {
 			   },
 		       success : function(resData) { 
 		          if(resData == null) return;
-		          flowListObj.makeFlowArea(resData);
+		          var state = resData.state;//1:有流程    0：没有    -1：系统报错
+		          if(state == 1) {
+		        	  flowListObj.makeFlowArea(resData);
+		          } else if (state == 0){
+		        	  layer.open({
+		    			  content: '该订单没有流程轨迹！'
+		    			  ,style: 'background-color:#f7f7f8; width:80%;color:#323232; border:none;' //自定风格
+		    			  ,time: 3
+    				  });
+		          }
+		          
 		       }     
 	     });
 	}

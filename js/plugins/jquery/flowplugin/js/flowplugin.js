@@ -35,11 +35,11 @@
         	
         	//遍历生成一行一行 流程信息
         	$.each(data,function(index,item){
-        		var v_date = item.createDate.split(/\s/)[0];
-        		var v_time = item.createDate.split(/\s/)[1];
+        		var v_date = (item.createDate == undefined || item.createDate == null) ? "" : item.createDate.split(/\s/)[0];
+        		var v_time = (item.createDate == undefined || item.createDate == null) ? "" : item.createDate.split(/\s/)[1];
         		var v_name = item.jobName;
         		//var v_other_arr = item.jobOther == undefined ? [] : item.jobOther;// 判空处理
-        		var v_other_arr = item.jobOther == undefined ? "" : item.jobOther.split(/,/);// 判空处理
+        		var v_other_arr = (item.jobOther == undefined || item.jobOther == null) ? "" : item.jobOther.split(/,/);// 判空处理
         		
         		//console.log(index+" "+v_date+" "+v_time);
         		

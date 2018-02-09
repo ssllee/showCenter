@@ -4,6 +4,8 @@ var exCode = "";//系统编码
 var userName = "";//用户账号
 var callCode = "";//加密字符串
 
+var messageCodeMinute = 60;//短信验证码倒计时 60秒
+
 (function(){
 	//页面初始加载时执行
 	initSaveOutParams();

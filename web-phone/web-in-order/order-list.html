@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>phone</title>
+  <title></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-
   <!--bootstrap插件-->
   <link rel="stylesheet" type="text/css" href="../../js/plugins/bootstrap/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../../js/plugins/bootstrap/bootstrap/css/bootstrap-theme.min.css">
   <link rel="stylesheet" type="text/css" href="../../js/plugins/bootstrap/bootstrap-table/bootstrap-table.min.css">
-
   <!--手机端  时间插件  -->
   <link rel="stylesheet" type="text/css" href="../../js/plugins/mobiscroll/mobiscroll.custom-2.5.2.min.css">
   <!-- 手机端加载等待 -->
@@ -20,90 +18,132 @@
   <!-- 手机自己 -->
   <link rel="stylesheet" type="text/css" href="./css/order-list.css">
 
+
+  <!--【手机端专享】自适应必须放head里-->
+  <script type="text/javascript" src="../js/web-util.js"></script>
+  
   <!-- http://127.0.0.1:8083/QueryCenterWeb/web-phone/web-in-order/order-list-test.html -->
 
 </head>
 
 <body>
-
   <!-- 标题 start -->
+
   <header class="txc">
-    <div class="cl fl"> <i class="glyphicon glyphicon-chevron-left" onclick="goBack()"></i></div>
+    <div class="cl fl"> <i class="glyphicon glyphicon-chevron-left" onclick="goBack()"></i>
+    </div>
     <div class="cr fr">&nbsp;</div>
     <div class="cc">订单查询</div>
   </header>
   <!-- 标题 end -->
 
-  <div class="container" style="width:100%;">
-    <form action="javascript:;" id="searchForm" class="form-horizontal">
-      <div class="form-body">
-        <div class="row">
+  <ul class="nav nav-tabs">
+    <li class="change active"><a href="javascript:showDiv('id1')">方式一</a></li>
+    <li class="change"><a href="javascript:showDiv('id2')">方式二</a></li>
+    <li class="change"><a href="javascript:showDiv('id3')">方式三</a></li>
+  </ul>
 
-          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-            <div class="form-group">
-              <label class="col-sm-4 col-md-5 control-label"></label>
-              <div class="col-sm-8 col-md-7">
-                <select class="form-control" id="orderType" name="orderType">
-                  <option value="">请选择订单类型</option>
-                  <option value="1">渠道</option>
-                  <option value="2">营业</option>
-                </select>
-              </div>
-            </div>
-          </div>
+  <form action="javascript:;" id="searchForm" class="form-horizontal">
+    <!-- 隐藏块1 订单类型+订单号查询  start-->
+    <div id="id1">
 
-          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-            <div class="form-group">
-              <label class="col-sm-4 col-md-5 control-label"></label>
-              <div class="col-sm-8 col-md-7">
-                <input  type="text" value="" class="form-control" id="orderNum" name="orderNum" placeholder="请输入订单号" />
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-            <div class="form-group">
-              <label class="col-sm-4 col-md-5 control-label"></label>
-              <div class="col-sm-8 col-md-7">
-                <input  type="text" value="" class="form-control" id="serialNumber" name="serialNumber" placeholder="请输入业务号码"/>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-            <div class="form-group">
-              <label class="col-sm-4 col-md-5 control-label"></label>
-              <div class="col-sm-8 col-md-7">
-                <input id="ocAcceptDate"  name="ocAcceptDate" type="text" class="form-control" placeholder="请选择日期"></div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-            <div class="form-group">
-              <label class="col-sm-4 col-md-5 control-label"></label>
-              <div class="col-sm-8 col-md-7">
-                <input  type="text" value="" class="form-control" id="exAcceptStaffid" name="exAcceptStaffid" placeholder="请输入受理人工号"/>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="text-right">
-          <button type="submit" class="btn btn-warning submitBtn">查询</button>
-          <button type="button" class="btn btn-warning resetBtn">重置</button>
-          <section class="fakeParent">
-            <div class="fakeloader"></div>
-          </section>
+      <div class="a-input-group">
+        <div class="group-text">
+          <select class="form-control a-select bg2" id="orderType" name="orderType">
+            <option value="">请选择订单类型</option>
+            <option value="1">渠道</option>
+            <option value="2">营业</option>
+          </select>
         </div>
       </div>
+
+
+
+
+
+      <div class="a-input-group">
+        <div class="group-text">
+          <input class="form-control bg2" type="text" id="orderNum" name="orderNum" placeholder="请输入订单号" />
+        </div>
+      </div>
+
+     <!--  <div class="a-div">
+        <a href="javascript:showDiv('id2')" class="change">使用业务号码查询</a>
+      </div>
+      <div class="a-div">
+        <a href="javascript:showDiv('id3')" class="change">使用受理日期和受理人工号查询</a>
+      </div> -->
+
+      <div class="a-btn-group">
+        <button type="submit" class="btn btn_submit" id="in_orderNumSearch">查询</button>
+        <button type="button" class="btn btn_reset" id="resetBtn1">重置</button>
+      </div>
+
+    </div>
+    <!-- 隐藏块1 订单类型+订单号查询  end-->
+
+    <!-- 隐藏块2 业务号码查询  start-->
+    <div id="id2" style="display: none">
+
+      <div class="a-input-group">
+        <div class="group-text">
+          <input class="form-control bg2" type="text" id="serialNumber" name="serialNumber" placeholder="请输入业务号码"/>
+        </div>
+      </div>
+
+      <!-- <div class="a-div">
+        <a href="javascript:showDiv('id1')" class="change">使用订单类型和订单编号查询</a>
+      </div>
+      <div class="a-div">
+        <a href="javascript:showDiv('id3')" class="change">使用受理日期和受理人工号查询</a>
+      </div> -->
+
+      <div class="a-btn-group">
+        <button type="submit" class="btn btn_submit" id="in_serialNumberSearch">查询</button>
+        <button type="button" class="btn btn_reset" id="resetBtn2">重置</button>
+      </div>
+
+    </div>
+    <!-- 隐藏块2 业务号码查询  end-->
+
+    <!-- 隐藏块3 受理日期+受理人工号查询  start-->
+    <div id="id3" style="display: none">
+
+      <div class="a-input-group">
+        <div class="group-text">
+          <input class="form-control bg2" id="ocAcceptDate"  name="ocAcceptDate" type="text" placeholder="请选择日期">
+        </div>
+      </div>
+
+      <div class="a-input-group">
+        <div class="group-text">
+          <input class="form-control bg2" type="text" value=""  id="exAcceptStaffid" name="exAcceptStaffid" placeholder="请输入受理人工号"/>
+        </div>
+      </div>
+
+     <!--  <div class="a-div">
+        <a href="javascript:showDiv('id1')" class="change">使用订单类型和订单编号查询</a>
+      </div>
+      <div class="a-div">
+        <a href="javascript:showDiv('id2')" class="change">使用业务号码查询</a>
+      </div> -->
+
+      <div class="a-btn-group">
+        <button type="submit" class="btn btn_submit" id="in_exAcceptStaffidSearch">查询</button>
+        <button type="button" class="btn btn_reset" id="resetBtn3">重置</button>
+      </div>
+
     </form>
-    <!-- search end -->
+    <!-- 隐藏块3 受理日期+受理人工号查询  end--> </div>
+  <!-- search end -->
 
-    <div id="searchResult" class="searchResult"></div>
-
-  </div>
+  
+  	<div class="listArea" id="listid">  
+    
+  	</div>
+	<section class="fakeParent" id="loader">
+	    <div class="fakeloader" ></div>
+	</section>
 
   <!-- 核心插件 start-->
 

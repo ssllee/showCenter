@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ------手机端对内流转轨迹查询------- -->
-<!-- ------http://127.0.0.1:8092/QueryCenterWeb/web-phone/web-in-order/flow-list.html------- -->
+<!-- ------http://127.0.0.1:8092/QueryCenterWeb/web-phone/web-in-order/flow-list.html?orderNum=11------- -->
 <html>
   <head>
     <title></title>
@@ -19,6 +19,9 @@
 	<!--自己-->
 	<link rel="stylesheet" type="text/css" href="./css/flow-list.css">
 	
+	<!--【手机端专享】自适应必须放head里-->
+    <script type="text/javascript" src="../js/web-util.js"></script>
+  
   </head>
   
   <body>
@@ -34,25 +37,33 @@
 		<form class="form-horizontal" role="form" id="searchForm">
 			<div class="a-input-group">
 			  <div class="group-text">
-					<input id="sysCode" name="sysCode" class="bg2" type="text" placeholder="请输入归属系统" >
-				</div>
-			</div>
+				<select class="form-control a-select bg2" id="sysCode" name="sysCode">
+		            <option value="">请选择归属系统</option>
+		            <option value="BLD">天越</option>
+	                <option value="CRM">营业</option>
+	                <option value="IOM">服务开通</option>
+	                <option value="OC">订单中心</option>
+	                <option value="PALM">掌上运维</option>
+	          </select>
+			 </div>
+		   </div>
 			<div class="a-input-group">
 			  <div class="group-text">
-					<input id="jobName" name="jobName" class="bg2" type="text"  placeholder="请输入环节名称">
-				</div>
-			</div>	
+			  <input id="jobName" name="jobName" class="form-control bg2" type="text" placeholder="请输入环节名称" >
+			
+			</div>
+		 </div>	
 			<div class="a-btn-group">
-		             <button type="button" class="btn btn-warning submitBtn">查询</button>
-		             <button type="button" class="btn btn-warning resetBtn">重置</button>
+		             <button type="button" class="btn btn_submit submitBtn">查询</button>
+		             <button type="button" class="btn btn_reset resetBtn">重置</button>
 		     </div>
 		</form>
 	</section>
+	<div class="listArea">  
+    	
+  	</div>
 	<section class="fakeParent" id="loader">
 	    <div class="fakeloader" ></div>
-	</section>
-	<section class="txc">
-		<div  id="show"></div>
 	</section>
 	<!--form end -->
     
@@ -83,9 +94,6 @@
 	<script type="text/javascript" src="../../js/common/util.js"></script>
 	<!-- 加载等待插件 -->
 	<script type="text/javascript" src="../../js/plugins/jquery/fakeloader/js/fakeloader.min.js"></script>
-	
-	<!--【手机端专享】-->
-	<script type="text/javascript" src="../js/web-util.js"></script>
 	
 	<!-- 手机核心插件 end -->
 	

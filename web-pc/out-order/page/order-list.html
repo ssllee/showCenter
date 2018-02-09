@@ -14,23 +14,29 @@
 	<!--pc公共-->
 	<link rel="stylesheet" type="text/css" href="../../../css/base.css">
 	<!-- pc端样式统一风格，一般都写在base.css中即可，本页特殊设置写在本页即可  -->
-	
+	<!-- 这里引用了手机端验证码的css文件 -->
+	<link rel="stylesheet" type="text/css" href="../../../css/pc-out-order.css">
   </head>
   
   <body>
   	<div class="panelA">
-  		<div class="container" style="width:100%;">
-  				
+  		<div class="container" style="width:100%;"><!-- style="width:100%;" class里ie不起作用-->				
 			<!-- title start -->
 			<div class="title">订单查询</div>
 			<!-- title end -->
+			
+			<ul class="nav nav-tabs">
+			  <li role="presentation" class="active"><a href="javascript:;" onclick="searchMethod(1)">方式一</a></li>
+			  <li role="presentation"><a href="javascript:;" onclick="searchMethod(2)">方式二</a></li>
+			</ul>
+			
 			<!-- search start -->
 			<form action="javascript:;" id="searchForm" class="form-horizontal">
 	               <div class="form-body">
-	                     <div class="row">
+	                     <div class="row row1">
 	                           <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
 								    <div class="input-group a-input-group mgb10">
-									  <input type="text" class="form-control a-input" placeholder="请输入电话号码">
+									  <input type="text" class="form-control a-input" id="phoneNumber" name="phoneNumber" placeholder="请输入电话号码" datavalue="请输入电话号码">
 									  <span class="input-group-btn">
 								        <button class="btn btn-phone searchPhoneBtn" type="button"></button>
 								      </span>
@@ -40,15 +46,15 @@
 	                           </div>
 	                           <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
 	                               <div class="input-group a-input-group mgb10">
-									  <input type="text" class="form-control a-input" placeholder="请输入身份证号码">
+									  <input type="text" class="form-control a-input" id="credentialCode" name="credentialCode" placeholder="请输入身份证号码" datavalue="请输入身份证号码">
 									  <span class="input-group-addon height100 span-person"></span>
 									</div>
 	                           </div>
 	                      </div>
-	                      <div class="row">
+	                      <div class="row row2" style="display:none;">
 	                           <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-	                               <div class="input-group a-input-group">
-							      <input type="text" class="form-control a-input" placeholder="请输入订单号">
+	                               <div class="input-group a-input-group mgb10">
+							      <input type="text" class="form-control a-input"  id="serialNumber" name="serialNumber" placeholder="请输入业务号码" datavalue="请输入业务号码">
 							      <span class="input-group-btn">
 							        <button class="btn btn-sssearch searchSerialNumberBtn" type="button"></button>
 							      </span>
@@ -62,7 +68,7 @@
             
             <!-- table start -->
             <div class="a-tableDivEmpty"></div>
-            <div class="a-tableDiv table-responsive">
+            <div class="a-tableDiv table-responsive" style="display:none;">
             	<table id="table" class="table table-bordered table-hover"
 		              data-toggle="table"
 		              data-method="post"
@@ -78,23 +84,55 @@
 		              data-show-columns="false"
 		              data-search="false"
 		              data-search-align="left"
-		              data-sort-name="MENUID"
+		              data-sort-name="orderNum"
 		              data-sort-order="asc"
 		               >
 		           <thead> 
 		           <tr> 
-		               <th data-field="MENUID" data-sortable="false" data-formatter="orderListObj.hrefFormatter" data-events="actionEvents">订单号</th> 
-		               <th data-field="PMENUID" data-sortable="false" >父菜单id</th>   			                																
-		               <th data-field="CAPTION" data-sortable="false">菜单名称 </th>
-		               <th data-field="URL" data-sortable="false" data-visible="false">url</th>
-		               <th data-field="operation" data-formatter="orderListObj.actionFormatter" data-events="actionEvents">订单状态</th>
+		               <th data-field="orderNum" data-sortable="false" data-formatter="orderListObj.hrefFormatter" data-events="actionEvents">订单编号</th> 
+		               <th data-field="ocAcceptDate" data-sortable="false" >受理日期</th>   			                																
+		               <th data-field="productName" data-sortable="false">产品名称 </th>
+		               <th data-field="customerName" data-sortable="false">客户名称 </th>
+		              <!-- <th data-field="URL" data-sortable="false" data-visible="false">url</th> -->
+		               <th data-field="addrName" data-sortable="false">装机地址</th>
+		               <th data-field="statusFlag" data-formatter="orderListObj.actionFormatter" data-events="actionEvents" data-width="140px">订单状态</th> 
 		           </tr>
 		           </thead>
 		       </table>	
             </div>
-	        <!-- table end -->
+	        <!-- table end -->       
 		</div>
   	</div>
+  	
+  	 <!-- 短信验证码弹出框  start-->
+			<div class="bg-model-wrap"><!--初始隐藏-->
+				<div class="bg-model-cover"><!--底层遮盖区域-->
+					<div class="content" style="height:300px;width:600px;padding: 40px 90px;"><!--展示内容-->
+						<a href="javascript:;" class="bg-model-close"></a>
+							<!-- 这里写弹层内容 start -->		
+							<div class="mb30 messgeFont">请输入手机实时验证码</div>
+						   
+						    <div id="pwd-input" class="pwd-input" tabindex="0" contenteditable="true"></div>
+						    <div class="pwd-box">
+								<div id="dv" class="fake-box">
+									<p class="dvp1"></p>
+									<p class="dvp2 mg5"></p>
+									<p class="dvp3 mg5"></p>
+									<p class="dvp4 mg5"></p>
+									<p class="dvp5 mg5"></p>
+									<p class="dvp6"></p>
+								</div>
+						    </div>
+						   
+						    <div class="mt30 messgeFont txr">
+								<input type="button" class="btn_getMess" id="btn" value="重新获取验证码" onclick="sendemail()" />
+						    </div>
+						   
+						    <!-- 这里写弹层内容 end -->
+					</div>						
+			  </div>
+		 </div>
+    	 <!-- 短信验证码弹出框 end --> 	    
 	    
 	    
 	<!-- 核心插件 start-->
@@ -117,9 +155,6 @@
 	<script type="text/javascript" src="../../../js/plugins/bootstrap/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
 	<script type="text/javascript" src="../../../js/plugins/bootstrap/bootstrap-table/bootstrap-table-export.min.js"></script><!--控制导出按钮-->
 	<script type="text/javascript" src="../../../js/plugins/bootstrap/bootstrap-table/tableExport.min.js"></script><!--控制导出功能-->
-	
-	<!--bootstrap paginator-->
-	<script type="text/javascript" src="../../../js/plugins/bootstrap/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 		
 	<!-- layer 弹出层 -->
 	<script type="text/javascript" src="../../../js/plugins/layui/layer/layer.js"></script>
@@ -131,12 +166,6 @@
 	<script type="text/javascript" src="../../../js/plugins/jquery/jquery-validation/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="../../../js/plugins/jquery/jquery-validation/messages_zh.min.js"></script>
 	
-	<!-- 五角星评价 -->
-	<script type="text/javascript" src="../../../js/plugins/jquery/jquery.raty.min.js"></script>
-	
-	<!--PC 时间插件 My97DatePicker -->
-	<script type="text/javascript" src="../../../js/plugins/My97DatePicker/WdatePicker.js" ></script>
-	
 	<!--公共部分-->
 	<script type="text/javascript" src="../../../js/common/common.js"></script>
 	<script type="text/javascript" src="../../../js/common/util.js"></script>
@@ -144,6 +173,7 @@
 	<!-- 核心插件 end-->  
 	
 	<!--自己-->
+	<script type="text/javascript" src="../../../js/plugins/jquery/validate-code.js"></script><!-- 验证码js -->
 	<script type="text/javascript" src="../js/order-list.js"></script>
 	  
   </body>

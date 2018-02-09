@@ -1,44 +1,79 @@
 @charset "utf-8";
-.inflowheader{
-	margin:3rem 1.3rem 1.1rem;
+
+/* .inflowheader{
+	margin:3rem 1.3rem 0rem;
 	
+} */
+
+/* .show {
+	overflow: hidden;
+	margin-top: 0.9rem;
+} */
+
+
+
+.listArea {
+	margin-top: 0.9rem;/*18px;*/
 }
-.content{
-	  height:19.1rem;
-	  width:33.5rem;
+
+.listArea .line {
+	border-bottom: 0.1rem solid #f6f6f6; /*2px*/
+    width: 100%;
+}
+
+.listArea ul {
+	overflow: hidden;
+	margin: 0 1.1rem 0.9rem 1.1rem; /*0 22px 18px 22px;*/
+	background-color: #fff;
+	border-radius: 1.1rem;/*22px;*/
+	list-style: none;
+	border: 0.25rem solid #fff;/*5px solid #fff;*/
+	border-image-source:url(../../images/order/phone-line.png);
+	border-image-width: 0 0 1.05rem 100%;/*0 0 21px 100%  top right bottom left*/
+}
+
+/* .content{
 	  float:left;
       list-style:none;
-	  border-radius: 0.7rem; 
-	  background-color: #ffffff;
-	  background-image: url("../../images/order/phone-line.png");
-	  background-repeat: no-repeat;
-	  background-position: center bottom; 
-	  padding-top:0.7rem;
-	  padding-bottom:1.7rem;
-	  margin-bottom: 0.9rem;
-	  margin-left: 1.2rem;
-	  margin-right: 1.2rem;
-}
-.content li{
-	float:left;
-	height:2.08rem; 
+	  border-radius: 1.1rem; 
+	  background-color: #fff;
+	  border-image-source: url("../../images/order/phone-line.png");
+	  border-image-width: 0 0 1.05rem 100%;
+	  padding:0.7rem 0rem 1.7rem;
+	  margin: 0 1.1rem 0.9rem 1.1rem;
+} */
+
+.listArea ul li{
+	float:left; 
 	width:100%;
+	display: table;
+	position: relative;
 	margin:0;
-	padding:0;
-	}
+	
+	font-size: 1.3rem; /* 26px; */
+	color: #444;
+	padding: 0 2.5rem;
+}
+
 .div1{
-	float:left;
-	width:15rem;
-	font-size:1.3rem;
-	color:#444444;
-	margin:0;
-	padding:0;
+	width: 30%;
+	float: left;
+	/* display: table-cell; */
+	height: 3rem;
+	line-height: 3rem;
+	text-align:justify;
+}
+.div1:after{
+	   content: '';
+       padding-left: 100%;
+       display: inline-block;
 }
 .div2{
-	float:left;
-	width:18rem;
-	font-size:1.3rem;
-	color:#444444;
-	margin:0;
-	padding:0;
-}
+	width: 70%;
+	line-height: 3rem;
+	display: table;
+	table-layout: fixed;
+	word-wrap: break-word;
+	
+} 
+

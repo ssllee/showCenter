@@ -163,7 +163,12 @@ function goBackRefresh() {
 	window.location.replace(document.referrer);//浏览器可以，手机不刷新
 }
 
-
+/**
+ * 当前页面重新加载
+ */
+function reloadPage() {
+	location.reload();
+}
 /************************pc**************/
 
 /**
@@ -190,12 +195,40 @@ function showRightLayer(layerId,layerTitle,layerUrl) {
 		  offset: 'r',
 		  skin: 'a-layer', //
 		  content: layerUrl //iframe的url
-			  
+		  /*,end: function () {
+              location.reload();
+          }*/
     });
     
 }
 
 
 /**************************************/
+/**
+ * 电话号码转换
+ */
+function telFormat(tel){
+	var reg = tel.replace(/(\d{3})(\d{4})(\d{4})/,"$1****$3");
+	console.log("转换后的电话号码："+reg);
+	return reg;
+}
 
+/**
+ * placeholder 兼容ie8 解决方式
+ * @param target
+ */
+function placeholder(target){
+    $(target).val($(target).attr("datavalue")).addClass("inpupt-placeholder");
+    $(target).focus(function() {
+        if($(this).val() == $(this).attr("datavalue")) {
+            $(this).val("").removeClass("inpupt-placeholder");
+        } 
+        
+    })
+    $(target).blur(function(){
+        if($(this).val() == "" || $(this).val() == $(this).attr("datavalue")) {
+            $(this).val($(target).attr("datavalue")).addClass("inpupt-placeholder");
+        }
+    })
+}
 

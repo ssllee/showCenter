@@ -18,6 +18,9 @@
 	<!--自己-->
 	<link rel="stylesheet" type="text/css" href="../css/order-search-inmess.css">
 
+	<!--【手机端专享】自适应必须放head里-->
+  	<script type="text/javascript" src="../../js/web-util.js"></script>
+	
 </head>  
 <body>
 	<!-- 标题 start -->
@@ -33,16 +36,16 @@
 	
 	
 	<!-- 验证码输入框 start-->
-	<div class="pwd-box">  
-    	<input type="tel" maxlength="6" class="pwd-input" id="pwd-input">  
-    	  <div class="fake-box">  
-       		<input type="text" readonly="">  
-       	 	<input type="text" readonly="">  
-        	<input type="text" readonly="">  
-        	<input type="text" readonly="">  
-        	<input type="text" readonly="">  
-        	<input type="text" readonly="">  
-    	</div>  
+	<div id="pwd-input" class="pwd-input" tabindex="0" contenteditable="true"></div>
+	<div class="pwd-box">
+		<div id="dv" class="fake-box">
+			<p class="dvp1"></p>
+			<p class="dvp2 mglr"></p>
+			<p class="dvp3 mglr"></p>
+			<p class="dvp4 mglr"></p>
+			<p class="dvp5 mglr"></p>
+			<p class="dvp6"></p>
+		</div>
 	</div>
 	<!-- 验证码输入框 end-->
 	
@@ -52,6 +55,9 @@
 	</div>
 	<!-- 重新获取验证码end-->  
 	
+	<div class="fakeParent"><!--固定区域，如果不设置fakeParent，则会整个浏览器窗口大小为加载区域-->
+		<div class="fakeloader"></div><!--加载等待旋转图-->
+ 	</div>
 	
 	<!-- 手机核心插件 start -->
 	<!--[if lt IE 9]>
@@ -75,16 +81,17 @@
 	<!-- layer 弹出层 -->
 	<script type="text/javascript" src="../../../js/plugins/layui/layer/mobile/layer.js"></script>
 	
+	<!-- 加载等待插件 -->
+	<script type="text/javascript" src="../../../js/plugins/jquery/fakeloader/js/fakeloader.min.js"></script>
+	
 	<!--公共部分-->
 	<script type="text/javascript" src="../../../js/common/common.js"></script>
 	<script type="text/javascript" src="../../../js/common/util.js"></script>
-		
-	<!--【手机端专享】-->
-	<script type="text/javascript" src="../../js/web-util.js"></script>
 	
 	<!-- 手机核心插件 end -->
 	
 	<!--自己-->
+	<script type="text/javascript" src="../../../js/plugins/jquery/validate-code.js"></script><!-- 验证码js -->
 	<script type="text/javascript" src="../js/order-search-inmess.js"></script>
 </body>  
 </html>  
